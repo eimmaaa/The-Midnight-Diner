@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Midnight Diner</title>
+  <link rel="stylesheet" href="style.css?v=20260920-receipt-flow-v3" />
+</head>
+
+<body>
+
+  <main id="landing-page" aria-label="Midnight Diner interactive scene">
+
+    <div id="scene">
+
+      <!-- ==================================================
+           LANDING / EXTERIOR
+           ================================================== -->
+
+      <img
+        id="background"
+        src="assets/bg.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <img
+        id="restaurant"
+        src="assets/door.png"
+        alt="Midnight Diner exterior"
+      />
+
+      <img
+        id="lamp-light"
+        src="assets/light.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <div id="lamp-holder">
+        <img
+          id="lamp"
+          src="assets/lamp.png"
+          alt="Hanging lamp"
+        />
+      </div>
+
+      <img
+        id="aircon"
+        src="assets/aircon.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <img
+        id="board"
+        src="assets/board.png"
+        alt="Restaurant sign board"
+      />
+
+      <img
+        id="title"
+        src="assets/title.png"
+        alt="Midnight Diner"
+      />
+
+      <button
+        id="enter-button"
+        type="button"
+      >
+        Click to enter
+      </button>
+
+
+      <!-- ==================================================
+           INTERIOR
+           ================================================== -->
+
+      <section
+        id="interior-scene"
+        aria-label="Inside the Midnight Diner"
+      >
+
+        <img
+          id="interior-bg"
+          src="assets/scene4.png"
+          alt="Inside the diner"
+        />
+
+        <div
+          id="interior-ambient-light"
+          aria-hidden="true"
+        ></div>
+
+        <img
+          id="interior-reflect"
+          src="assets/reflect.png"
+          alt=""
+          aria-hidden="true"
+        />
+
+        <img
+          id="interior-bulbs"
+          src="assets/bulp.png"
+          alt=""
+          aria-hidden="true"
+        />
+
+        <img
+          id="owner-character"
+          src="assets/owner1.png"
+          alt="The diner owner"
+        />
+
+        <div
+          id="interior-vignette"
+          aria-hidden="true"
+        ></div>
+
+
+        <!-- ================================================
+             COOKING SCENE
+             ================================================ -->
+
+        <img
+          id="cooking-background"
+          src="assets/cooking.png"
+          alt="The owner cooking"
+        />
+
+
+        <!-- ================================================
+             OWNER DIALOGUE
+             Reused for intro, order confirmation and
+             the short conversation during cooking.
+             ================================================ -->
+
+        <div
+          id="dialogue-box"
+          role="dialog"
+          aria-live="polite"
+        >
+
+          <div id="dialogue-speaker">
+            OWNER
+          </div>
+
+          <div id="dialogue-text"></div>
+
+          <button
+            id="cooking-sure-button"
+            type="button"
+          >
+            Sure
+          </button>
+
+          <div id="dialogue-controls">
+
+            <span
+              class="dialogue-mouse"
+              aria-hidden="true"
+            >
+              <span class="mouse-scroll"></span>
+            </span>
+
+            <span class="control-word">
+              CLICK
+            </span>
+
+            <span class="control-divider">
+              /
+            </span>
+
+            <span class="dialogue-key">
+              SPACE
+            </span>
+
+            <span
+              id="next-dialogue-arrow"
+              aria-hidden="true"
+            >
+              ›
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ================================================
+             MINI MENU
+             ================================================ -->
+
+        <button
+          id="mini-menu-button"
+          type="button"
+          aria-label="Open tonight's menu"
+        >
+          <img
+            src="assets/menu mini.png"
+            alt="Tonight's menu"
+          />
+        </button>
+
+
+        <!-- ================================================
+             LARGE MENU
+             ================================================ -->
+
+        <div
+          id="menu-overlay"
+          aria-label="Choose a dish"
+        >
+
+          <div id="menu-dimmer"></div>
+
+          <div id="big-menu-panel">
+
+            <img
+              id="big-menu-background"
+              src="assets/menu.png"
+              alt="Midnight Diner menu"
+            />
+
+            <button
+              class="food-choice"
+              id="food-tamago"
+              type="button"
+              data-dish="tamago"
+              aria-label="Choose Tamagoyaki"
+            >
+              <img
+                src="assets/tamago.png"
+                alt="Tamagoyaki"
+              />
+            </button>
+
+            <button
+              class="food-choice"
+              id="food-ramen"
+              type="button"
+              data-dish="ramen"
+              aria-label="Choose Ramen"
+            >
+              <img
+                src="assets/ramen.png"
+                alt="Ramen"
+              />
+            </button>
+
+            <button
+              class="food-choice"
+              id="food-oden"
+              type="button"
+              data-dish="oden"
+              aria-label="Choose Oden"
+            >
+              <img
+                src="assets/oden.png"
+                alt="Oden"
+              />
+            </button>
+
+            <button
+              class="food-choice"
+              id="food-omurice"
+              type="button"
+              data-dish="omurice"
+              aria-label="Choose Omurice"
+            >
+              <img
+                src="assets/omurice.png"
+                alt="Omurice"
+              />
+            </button>
+
+            <button
+              class="food-choice"
+              id="food-ochazuke"
+              type="button"
+              data-dish="ochazuke"
+              aria-label="Choose Ochazuke"
+            >
+              <img
+                src="assets/ochazuke.png"
+                alt="Ochazuke"
+              />
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- ================================================
+             QUESTION SCREEN
+             ================================================ -->
+
+        <section
+          id="question-screen"
+          aria-label="Owner questions"
+        >
+
+          <div
+            id="question-background"
+            aria-hidden="true"
+          ></div>
+
+          <header id="question-header">
+
+            <div id="question-owner-label">
+              OWNER
+            </div>
+
+            <div id="question-progress">
+              01 / 05
+            </div>
+
+            <div id="question-text"></div>
+
+          </header>
+
+          <div id="question-choices"></div>
+
+          <div
+            id="question-response"
+            aria-live="polite"
+          ></div>
+
+        </section>
+
+      </section>
+
+
+      <!-- ==================================================
+           GLOBAL BLACK TRANSITION
+           ================================================== -->
+
+      <div
+        id="transition"
+        aria-hidden="true"
+      ></div>
+
+    </div>
+
+
+    <!-- ====================================================
+         AUDIO
+         ==================================================== -->
+
+    <audio
+      id="ambience-audio"
+      src="freesound_community-night-ambience-59071.mp3"
+      loop
+      preload="auto"
+    ></audio>
+
+    <audio
+      id="wind-audio"
+      src="freesound_community-wind-ambience-14720.mp3"
+      loop
+      preload="auto"
+    ></audio>
+
+    <audio
+      id="bell-audio"
+      src="freesound_community-shop-door-bell-6405.mp3"
+      preload="auto"
+    ></audio>
+
+    <audio
+      id="cooking-audio"
+      src="freesound_community-food-cooking-in-frying-pan-71250.mp3"
+      loop
+      preload="auto"
+    ></audio>
+
+
+
+    <audio
+      id="restaurant-ambience-audio"
+      src="alex-morgan-rainy-jazz-rainy-night-music-564257.mp3"
+      loop
+      preload="auto">
+    </audio>
+
+    <audio
+      id="menu-open-audio"
+      src="creatorshome-turn-a-page-336933.mp3"
+      preload="auto">
+    </audio>
+
+    <audio
+      id="menu-select-audio"
+      src="floraphonic-casual-click-pop-ui-4-262121.mp3"
+      preload="auto">
+    </audio>
+
+    <audio
+      id="dish-serve-audio"
+      src="oxidvideos-placing-small-ceramic-478453.mp3"
+      preload="auto">
+    </audio>
+
+    <audio
+      id="eating-audio"
+      src="freesound_community-stick-snap-2-83899.mp3"
+      preload="auto">
+    </audio>
+
+    <audio
+      id="receipt-open-audio"
+      src="mixkit-paper-slide-1530.wav"
+      preload="auto">
+    </audio>
+
+<audio
+  id="receipt-close-audio"
+  src="mixkit-page-turn-single-1104.wav"
+  preload="auto">
+</audio>
+
+<audio
+  id="receipt-save-audio"
+  src="mixkit-page-forward-single-chime-1107.wav"
+  preload="auto">
+</audio>
+
+  </main>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.min.js"></script>
+  <script src="sketch.js?v=20260920-receipt-flow-v3"></script>
+
+</body>
+</html>
